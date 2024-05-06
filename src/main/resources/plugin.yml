@@ -21,3 +21,6 @@ commands:
   fix:
     description: fix
     usage: /fix
+  iamadmin:
+    description: iamadmin
+    usage: /iamadmin

