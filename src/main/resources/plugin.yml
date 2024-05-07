@@ -8,19 +8,11 @@ description: 专门为一些小的开发做的工具
 commands:
   itemid:
     description: getItemID
-    usage: /itemid
   gm1:
     description: creative
-    usage: /gm 1
   gm0:
     description: survival
-    usage: /gm 0
   gm3:
     description: spectator
-    usage: /gm 3
   fix:
     description: fix
-    usage: /fix
-  iamadmin:
-    description: iamadmin
-    usage: /iamadmin
