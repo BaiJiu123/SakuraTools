@@ -76,5 +76,12 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/GemsEconomy-4.9.2.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>cn.yistars.skypvp</groupId>
+            <artifactId>BingSkyPVP-api</artifactId>
+            <version>4.10</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/BingSkyPvP-4.10-Token-CN.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

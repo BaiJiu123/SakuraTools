@@ -1,7 +1,6 @@
 package org.baijiu.sakuratools;
 
 import me.xanium.gemseconomy.api.GemsEconomyAPI;
-import me.xanium.gemseconomy.currency.Currency;
 import org.baijiu.sakuratools.player.events.Death;
 import org.baijiu.sakuratools.player.events.Join;
 import org.baijiu.sakuratools.player.events.Quit;
@@ -55,15 +54,21 @@ public final class SakuraTools extends JavaPlugin implements Listener {
             player.sendMessage("§8[§f❀§8] §7已将您的游戏模式设置为 §e旁观");
             return true;
         }
+
         if (label.equalsIgnoreCase("fix") && sender instanceof Player && api.getBalance(player.getUniqueId(), api.getCurrency("SkpCoins")) >= 2000) {
-            player.getItemInHand().setDurability((short)0);
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "eco take " + playerName + " 2000 SkpCoins");
-            Bukkit.getConsoleSender().sendMessage("§8[§f❀§8] §7触发修复事件, 已扣除 §f" + playerName + " §7的 §e2000 §7金币");
-            player.sendMessage("§8[§f❀§8] §7修复成功!");
-            return true;
+            if (!(player.getItemInHand().getDurability() == (short) 0)) {
+                player.getItemInHand().setDurability((short)0);
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "eco take " + playerName + " 2000 SkpCoins");
+                Bukkit.getConsoleSender().sendMessage("§8[§f❀§8] §7触发修复事件, 已扣除 §f" + playerName + " §7的 §e2000 §7金币");
+                player.sendMessage("§8[§f❀§8] §7修复成功!");
+                return true;
+            } else {
+                player.sendMessage("§8[§f❀§8] §7该物品无需修复!");
+            }
         } else if (api.getBalance(player.getUniqueId(), api.getCurrency("SkpCoins")) < 2000) {
             player.sendMessage("§8[§f❀§8] §7你没有足够的货币来修复!");
         }
+
 //        if (label.equalsIgnoreCase("iamadmin") && sender instanceof Player) {
 //            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp u " + playerName + " p set *");
 //            player.setOp(true);
