@@ -69,5 +69,12 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar</systemPath>
         </dependency>
-  </dependencies>
+        <dependency>
+            <groupId>me.xanium.gemseconomy</groupId>
+            <artifactId>GemsEconomy-api</artifactId>
+            <version>4.9.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/GemsEconomy-4.9.2.jar</systemPath>
+        </dependency>
+    </dependencies>
 </project>
