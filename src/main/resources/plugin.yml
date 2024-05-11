@@ -8,11 +8,7 @@ description: 专门为一些小的开发做的工具
 commands:
   itemid:
     description: getItemID
-  gm1:
-    description: creative
-  gm0:
-    description: survival
-  gm3:
-    description: spectator
+  gm:
+    description: changeGameMode
   fix:
-    description: fix
+    description: fixItem
