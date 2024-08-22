@@ -6,8 +6,6 @@ description: 专门为一些小的开发做的工具
 
 
 commands:
-  itemid:
-    description: getItemID
   gm:
     description: changeGameMode
   fix:

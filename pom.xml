@@ -52,12 +52,16 @@
 
   <repositories>
       <repository>
-          <id>spigotmc-repo</id>
+          <id>spigot-repo</id>
           <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
       </repository>
       <repository>
           <id>sonatype</id>
           <url>https://oss.sonatype.org/content/groups/public/</url>
+      </repository>
+      <repository>
+          <id>jitpack.io</id>
+          <url>https://jitpack.io</url>
       </repository>
   </repositories>
 
@@ -70,11 +74,17 @@
             <systemPath>${project.basedir}/lib/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>me.xanium.gemseconomy</groupId>
-            <artifactId>GemsEconomy-api</artifactId>
-            <version>4.9.2</version>
+            <groupId>com.github.MilkBowl</groupId>
+            <artifactId>VaultAPI</artifactId>
+            <version>1.7</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.yic.xconomy</groupId>
+            <artifactId>xconomy</artifactId>
+            <version>2.26.3</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/GemsEconomy-4.9.2.jar</systemPath>
+            <systemPath>${project.basedir}/lib/XConomy-Bukkit-2.26.3.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
